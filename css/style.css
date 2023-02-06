@@ -1,47 +1,72 @@
-* {box-sizing: border-box;}
-
-.loginH1 {padding-top: 5rem;}
-
-.titulo {margin-bottom: 2em;}
-
-.busquedaFiltro{margin-bottom: 1em;}
-
-td a{text-decoration: none;
-  color: black;
-}
-td a:hover{
-  text-decoration: none;
-  color: #f3d27f;  
-}
-th a{text-decoration: none;
-  color: black;
+* {
+    box-sizing: border-box;
 }
 
-th a:hover{
-  text-decoration: none;
-  color: #f3d27f;  
+.loginH1 {
+    padding-top: 5rem;
 }
 
-.btn-success{
-  font-weight: bold;
-  margin-top: 1em;
+.titulo {
+    margin-bottom: 2em;
 }
 
-#nv_cpn, #nv_cpj{display: none;}
-
-#nvc_actualizar, #nvc_agregar{display: none;}
-
-#nvc_filtro_pn, #nvc_filtro_pj, #btnClearNVC{display: none;}
-
-.btn-info{
-  font-weight: bold;
+.busquedaFiltro {
+    margin-bottom: 1em;
 }
-.btn-light{
-  font-weight: bold;
+
+td a {
+    text-decoration: none;
+    color: black;
+}
+
+td a:hover {
+    text-decoration: none;
+    color: #f3d27f;
+}
+
+th a {
+    text-decoration: none;
+    color: black;
+}
+
+th a:hover {
+    text-decoration: none;
+    color: #f3d27f;
+}
+
+.btn-success {
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+#nv_cpn,
+#nv_cpj {
+    display: none;
+}
+
+#nvc_actualizar,
+#nvc_agregar {
+    display: none;
+}
+
+#nvc_filtro_pn,
+#nvc_filtro_pj,
+#btnClearNVC,
+#nvc_load {
+    display: none;
+}
+
+.btn-info {
+    font-weight: bold;
+}
+
+.btn-light {
+    font-weight: bold;
 }
 
 
 /*Sidebar */
+
 .sidebar {
     height: 100%;
     width: 0;
@@ -53,37 +78,38 @@ th a:hover{
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-  }
-  
-  .sidebar h2 {
+}
+
+.sidebar h2 {
     color: #f3d27f;
     padding: 8px 32px 8px 32px;
     display: block;
     transition: 0.3s;
-  }
+}
 
-  .sidebar a {
+.sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
     transition: 0.3s;
-  }
-  
-  .sidebar a:hover, .btn-light:hover {
+}
+
+.sidebar a:hover,
+.btn-light:hover {
     color: #f1f1f1;
-  }
-  
-  .sidebar .closebtn {
+}
+
+.sidebar .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-  }
-  
-  .openbtn {
+}
+
+.openbtn {
     display: inline-block;
     font-size: 20px;
     cursor: pointer;
@@ -92,21 +118,29 @@ th a:hover{
     padding: 10px 15px;
     border: none;
     margin-right: 1em;
-  }
-  
-  .openbtn:hover {
+}
+
+.openbtn:hover {
     background-color: #444;
-  }
-  
-  #main {
+}
+
+#main {
     transition: margin-left .5s;
     padding: 16px;
-  }
+}
 
-  #main h1{display: inline-block;}
-  
-  /* Sidebar Media Query */
-  @media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
-  }
+#main h1 {
+    display: inline-block;
+}
+
+
+/* Sidebar Media Query */
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+    .sidebar a {
+        font-size: 18px;
+    }
+}

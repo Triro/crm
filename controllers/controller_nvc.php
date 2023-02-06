@@ -33,7 +33,10 @@
     </div>
 </div>
 <div class="col">
-    <button type="button" class="btn btn-light" id='btnClearNVC'>x</button>
+    <div><button type="button" class="btn btn-light" id='btnClearNVC'>x</button></div>
+    <div class="spinner-border" role="status" id="nvc_load">
+        <span class="sr-only">Loading...</span>
+    </div>
 </div>
 
 

@@ -46,11 +46,16 @@
 
 <script>
     function sendAjaxRequestpn(id) {
+    //spiner on
+    $('#nvc_load').show();
+    id = id
     $.ajax({
         type: 'POST',
         url: '../controllers/controller_nvc_forms.php',
         data: {id:id, tipo:1},
         success: function(response) {
+        
+
         // parse the JSON response from the server
         var personaNaturalDetails = response
         console.log(response);
@@ -68,7 +73,18 @@
         $("#nv_leadpn option").filter(function() {
             return $(this).text() === personaNaturalDetails["Origen de Leads_idOrigen de Leads"];
         }).prop('selected', true);
-        actualizar = true;
+
+        //spiner off
+        $('#nvc_load').hide();
+
+        //buton actualizar
+        if(id!=0){ 
+          actualizar = true;
+        }
+        else{ 
+          $("#nvc_actualizar").hide();
+          actualizar = false;
+        }
       }
     });
   };
@@ -79,11 +95,18 @@
 
 <script>
     function sendAjaxRequestpj(id) {
+
+    //spiner on
+    $('#nvc_load').show();
+    id = id
     $.ajax({
         type: 'POST',
         url: '../controllers/controller_nvc_forms.php',
         data: {id:id, tipo:1},
         success: function(response) {
+
+        
+
         // parse the JSON response from the server
         var personaNaturalDetails = response
         console.log(response);
@@ -104,7 +127,17 @@
             return $(this).text() === personaNaturalDetails["Origen de Leads_idOrigen de Leads"];
         }).prop('selected', true);
 
-        actualizar = true;
+         //spiner off
+         $('#nvc_load').hide();
+
+        //buton actualizar
+        if(id!=0){ 
+          actualizar = true;
+        }
+        else{ 
+          $("#nvc_actualizar").hide();
+          actualizar = false;
+        }
 
       }
     });
