@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="../js/jquery-3.6.1.min.js"></script>
+
     <?php include("../controllers/heads.php")?>
     <title>Nueva Venta</title>
 </head>

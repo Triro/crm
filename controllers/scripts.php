@@ -24,6 +24,8 @@
             $('#nv_cpn').show();
             $('#nv_cpj').hide();
 
+            $('#btnClearNVC').show();           
+
           } else if ($(this).val() === 'nvc_option2') {
             //filtro
             $('#nvc_filtro_pj').show();
@@ -33,6 +35,8 @@
             $('#nv_cpj').show();
             $('#nv_cpn').hide();
 
+            $('#btnClearNVC').show();
+       
           }
         });
       });
@@ -64,13 +68,14 @@
         $("#nv_leadpn option").filter(function() {
             return $(this).text() === personaNaturalDetails["Origen de Leads_idOrigen de Leads"];
         }).prop('selected', true);
-
+        actualizar = true;
       }
     });
   };
 
 </script>
 
+<!-- NVC fill fields PJ -->
 
 <script>
     function sendAjaxRequestpj(id) {
@@ -99,8 +104,69 @@
             return $(this).text() === personaNaturalDetails["Origen de Leads_idOrigen de Leads"];
         }).prop('selected', true);
 
+        actualizar = true;
+
       }
     });
   };
 
+</script>
+
+<!-- Btn Clear Filter -->
+<script>
+$(document).ready(function() {
+  $("#btnClearNVC").click(function() {
+    // Change the selected option of the select element
+    $("#nvc_select_pj").val("0");
+    $("#nvc_select_pn").val("0");
+
+    //Reset PJ
+    $('#nv_nombrepj').val("");
+    $('#nv_apellidopj').val("");
+    $('#nv_telefonopj').val("");
+    $('#nv_documentopj').val("");
+    $('#nv_emailpj').val("");
+    $('#nv_direccionpj').val("");
+    $('#nv_paispj').val("");
+    $('#nv_comentariopj').val("");
+    $('#nv_cargopj').val("");
+    $('#nv_empresapj').val("");
+
+    $("#nv_leadpj option").filter(function() {
+        return $(this).text() === "vacio";
+    }).prop('selected', true);
+
+    //Reset PN
+    $('#nv_nombrepn').val("");
+    $('#nv_apellidopn').val("");
+    $('#nv_telefonopn').val("");
+    $('#nv_documentopn').val("");
+    $('#nv_emailpn').val("");
+    $('#nv_direccionpn').val("");
+    $('#nv_paispn').val("");
+    $('#nv_comentariopn').val("");
+
+    $("#nv_leadpn option").filter(function() {
+        return $(this).text() === "vacio";
+    }).prop('selected', true);
+
+    $("#nvc_actualizar").hide();
+    actualizar = false;
+
+  });
+});
+</script>
+
+<!-- Btn Actualizar -->
+
+<script>
+  $(document).ready(function() {
+      $('#nv_nombrepj, #nv_apellidopj, #nv_telefonopj, #nv_documentopj, #nv_emailpj, #nv_direccionpj, #nv_paispj, #nv_comentariopj, #nv_cargopj, #nv_empresapj, #nv_leadpj, #nv_nombrepn, #nv_apellidopn, #nv_telefonopn, #nv_documentopn, #nv_emailpn, #nv_direccionpn, #nv_paispn, #nv_comentariopn, #nv_leadpn').on('input change', function() {
+          if(actualizar){
+              $("#nvc_actualizar").show();
+          } else {
+              $("#nvc_actualizar").hide();
+          }
+      });
+  });
 </script>

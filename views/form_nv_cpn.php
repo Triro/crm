@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-md-3">
                     <label for="nv_leadpn">Origen de Lead</label>
-                    <select class="form-control" name="nv_lead" id="nv_leadpn">
+                    <select class="form-control" name="nv_leadpn" id="nv_leadpn">
                         <option value="fb">Facebook</option>
                         <option value="ig">Instagram</option>
                         <option value="ref">Referencia</option>
@@ -53,7 +53,7 @@
             <div class="row">
                 <div class="col">
                     <label for="nv_comentariopn">Comentario</label>
-                    <input class="form-control" type="text" id="nv_comentariopn">
+                    <textarea class="form-control" name="nv_comentariopn" id="nv_comentariopn" rows="6"></textarea>
                 </div>
             </div>
             <br>

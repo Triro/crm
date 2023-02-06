@@ -31,9 +31,12 @@ th a:hover{
 
 #nvc_actualizar, #nvc_agregar{display: none;}
 
-#nvc_filtro_pn, #nvc_filtro_pj{display: none;}
+#nvc_filtro_pn, #nvc_filtro_pj, #btnClearNVC{display: none;}
 
 .btn-info{
+  font-weight: bold;
+}
+.btn-light{
   font-weight: bold;
 }
 
@@ -68,7 +71,7 @@ th a:hover{
     transition: 0.3s;
   }
   
-  .sidebar a:hover {
+  .sidebar a:hover, .btn-light:hover {
     color: #f1f1f1;
   }
   

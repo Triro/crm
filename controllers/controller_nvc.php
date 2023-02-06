@@ -32,5 +32,8 @@
         </select>
     </div>
 </div>
+<div class="col">
+    <button type="button" class="btn btn-light" id='btnClearNVC'>x</button>
+</div>
 
 

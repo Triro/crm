@@ -6,7 +6,7 @@ class Dbh{
         try{
             $user = "root";
             $pass = "X2xdd800";
-            $loginDbh = new PDO('mysql:host=0.tcp.sa.ngrok.io:18561;dbname=users', $user, $pass);
+            $loginDbh = new PDO('mysql:host=0.tcp.sa.ngrok.io:10968;dbname=users', $user, $pass);
             return $loginDbh;        
         }
         catch(PDOException $e){
@@ -18,7 +18,7 @@ class Dbh{
         try{
             $user = "root";
             $pass = "X2xdd800";
-            $dbh = new PDO('mysql:host=0.tcp.sa.ngrok.io:18561;dbname=crm', $user, $pass);
+            $dbh = new PDO('mysql:host=0.tcp.sa.ngrok.io:10968;dbname=crm', $user, $pass);
             return $dbh;        
         }
         catch(PDOException $e){
