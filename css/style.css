@@ -52,7 +52,8 @@ th a:hover {
 #nvc_filtro_pn,
 #nvc_filtro_pj,
 #btnClearNVC,
-#nvc_load {
+#nvc_load,
+#nvc_continuar {
     display: none;
 }
 
@@ -66,6 +67,13 @@ th a:hover {
 
 
 /*Sidebar */
+
+
+.titulo{
+    padding: 1vw;
+    background-color: #2d343b;
+    color: #f3d27f;
+}
 
 .sidebar {
     height: 100%;
@@ -126,7 +134,7 @@ th a:hover {
 
 #main {
     transition: margin-left .5s;
-    padding: 16px;
+    padding: 0;
 }
 
 #main h1 {
