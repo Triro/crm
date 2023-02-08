@@ -39,6 +39,7 @@
             <!-- Contenido Dinamico -->
             <?php include("form_nv_cpn.php") ?>
             <?php include("form_nv_cpj.php") ?>
+            <?php include("btns_nvc.php") ?>
         </div>
     </div>
 <?php include("../controllers/scripts.php") ?>

@@ -24,7 +24,12 @@
             $('#nv_cpn').show();
             $('#nv_cpj').hide();
 
-            $('#btnClearNVC').show();           
+            $('#btnClearNVC').show();
+            
+            //botones
+            $('#nvc_continuar').hide();
+            $('#nvc_agregar').hide(); 
+            $('#nvc_actualizar').hide();         
 
           } else if ($(this).val() === 'nvc_option2') {
             //filtro
@@ -36,6 +41,11 @@
             $('#nv_cpn').hide();
 
             $('#btnClearNVC').show();
+
+            //botones
+            $('#nvc_continuar').hide();
+            $('#nvc_agregar').hide(); 
+            $('#nvc_actualizar').hide();   
        
           }
         });
@@ -48,7 +58,11 @@
     function sendAjaxRequestpn(id) {
     //spiner on
     $('#nvc_load').show();
-    id = id
+    //btns
+    $('#nvc_agregar').hide();
+    $('#nvc_continuar').hide();
+    $("#nvc_actualizar").hide();
+    idvalue = id;
     $.ajax({
         type: 'POST',
         url: '../controllers/controller_nvc_forms.php',
@@ -77,11 +91,15 @@
         //spiner off
         $('#nvc_load').hide();
 
-        //buton actualizar
+        //butones
+        $('#nvc_continuar').show();
+        
         if(id!=0){ 
           actualizar = true;
         }
-        else{ 
+        else{
+          $('#nvc_agregar').hide();
+          $('#nvc_continuar').hide();
           $("#nvc_actualizar").hide();
           actualizar = false;
         }
@@ -95,10 +113,13 @@
 
 <script>
     function sendAjaxRequestpj(id) {
-
+    //btns
+    $('#nvc_agregar').hide();
+    $('#nvc_continuar').hide();
+    $("#nvc_actualizar").hide();
     //spiner on
     $('#nvc_load').show();
-    id = id
+    idvalue = id;
     $.ajax({
         type: 'POST',
         url: '../controllers/controller_nvc_forms.php',
@@ -129,12 +150,19 @@
 
          //spiner off
          $('#nvc_load').hide();
+         $('#nvc_continuar').show();
 
-        //buton actualizar
+        //butones
+        $('#nvc_continuar').show();
+        $('#nvc_agregar').hide();
         if(id!=0){ 
           actualizar = true;
         }
         else{ 
+          $("#nvc_actualizar").hide();
+          //btns
+          $('#nvc_agregar').hide();
+          $('#nvc_continuar').hide();
           $("#nvc_actualizar").hide();
           actualizar = false;
         }
@@ -186,20 +214,55 @@ $(document).ready(function() {
     $("#nvc_actualizar").hide();
     actualizar = false;
 
+    $('#nvc_continuar').hide();
+    $('#nvc_agregar').hide();
+
   });
 });
 </script>
 
-<!-- Btn Actualizar -->
+<!-- Btn Actualizar y Agregar-->
 
 <script>
   $(document).ready(function() {
+      actualizar = false;
       $('#nv_nombrepj, #nv_apellidopj, #nv_telefonopj, #nv_documentopj, #nv_emailpj, #nv_direccionpj, #nv_paispj, #nv_comentariopj, #nv_cargopj, #nv_empresapj, #nv_leadpj, #nv_nombrepn, #nv_apellidopn, #nv_telefonopn, #nv_documentopn, #nv_emailpn, #nv_direccionpn, #nv_paispn, #nv_comentariopn, #nv_leadpn').on('input change', function() {
           if(actualizar){
               $("#nvc_actualizar").show();
           } else {
               $("#nvc_actualizar").hide();
+              $("#nvc_agregar").show();
           }
       });
   });
+
+  function nvc_continuar(id) {
+    id = idvalue
+    $.ajax({
+        type: 'POST',
+        url: '../controllers/controller_nvc.php',
+        data: {continuar:id},
+        success: function(response) {
+      }
+    });
+  }
+  // function nvc_actualizar(id) {
+  //   id = idvalue
+  //   $.ajax({
+  //       type: 'POST',
+  //       url: '../controllers/controller_nvc.php',
+  //       data: {actualizar:id},
+  //       success: function(response) {
+  //     }
+  //   });
+  // }
+  // function nvc_agregar() {
+  //   $.ajax({
+  //       type: 'POST',
+  //       url: '../controllers/controller_nvc.php',
+  //       data: {continuar:id},
+  //       success: function(response) {
+  //     }
+  //   });
+  // }
 </script>
