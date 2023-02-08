@@ -69,5 +69,4 @@
                 </div>
             </div>
             <br>
-            <?php include("btns_nv.php") ?>
 </div>
