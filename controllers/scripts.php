@@ -62,7 +62,7 @@
     $('#nvc_agregar').hide();
     $('#nvc_continuar').hide();
     $("#nvc_actualizar").hide();
-    id = id
+    idvalue = id;
     $.ajax({
         type: 'POST',
         url: '../controllers/controller_nvc_forms.php',
@@ -119,7 +119,7 @@
     $("#nvc_actualizar").hide();
     //spiner on
     $('#nvc_load').show();
-    id = id
+    idvalue = id;
     $.ajax({
         type: 'POST',
         url: '../controllers/controller_nvc_forms.php',
@@ -235,4 +235,34 @@ $(document).ready(function() {
           }
       });
   });
+
+  function nvc_continuar(id) {
+    id = idvalue
+    $.ajax({
+        type: 'POST',
+        url: '../controllers/controller_nvc.php',
+        data: {continuar:id},
+        success: function(response) {
+      }
+    });
+  }
+  // function nvc_actualizar(id) {
+  //   id = idvalue
+  //   $.ajax({
+  //       type: 'POST',
+  //       url: '../controllers/controller_nvc.php',
+  //       data: {actualizar:id},
+  //       success: function(response) {
+  //     }
+  //   });
+  // }
+  // function nvc_agregar() {
+  //   $.ajax({
+  //       type: 'POST',
+  //       url: '../controllers/controller_nvc.php',
+  //       data: {continuar:id},
+  //       success: function(response) {
+  //     }
+  //   });
+  // }
 </script>

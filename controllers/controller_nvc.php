@@ -7,6 +7,10 @@
 
     //Insertar los Selects
     $selectOption = new nvcController();
+
+    if(isset($_POST['continuar'])){
+        header('location: nueva_venta.php');
+    }
         
 ?>
 
