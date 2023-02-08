@@ -21,14 +21,15 @@
             </div>
             <br>
             <!-- 1ra fila -->
-            <div class="row">   
+            <div class="row">
                 <div class="col-md-4">
+                <form action="../controllers/controller_nv.php" method="post">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="nvc_check" id="nvc_check_pn" value="nvc_option1">
+                        <input class="form-check-input" type="radio" name="nvc_check" id="nvc_check_pn" value="1">
                         <label class="form-check-label" for="nvc_check_pn">Persona Natural</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="nvc_check" id="nvc_check_pj" value="nvc_option2">
+                        <input class="form-check-input" type="radio" name="nvc_check" id="nvc_check_pj" value="2">
                         <label class="form-check-label" for="nvc_check_pj">Persona Juridica</label>
                     </div>
                 </div>
@@ -40,6 +41,7 @@
             <?php include("form_nv_cpn.php") ?>
             <?php include("form_nv_cpj.php") ?>
             <?php include("btns_nvc.php") ?>
+            </form>
         </div>
     </div>
 <?php include("../controllers/scripts.php") ?>

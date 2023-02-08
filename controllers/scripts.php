@@ -16,7 +16,7 @@
 <script>
       $(document).ready(function() {
         $(':radio').change(function() {
-          if ($(this).val() === 'nvc_option1') {
+          if ($(this).val() === '1') {
             //filtro
             $('#nvc_filtro_pn').show();
             $('#nvc_filtro_pj').hide();
@@ -31,7 +31,7 @@
             $('#nvc_agregar').hide(); 
             $('#nvc_actualizar').hide();         
 
-          } else if ($(this).val() === 'nvc_option2') {
+          } else if ($(this).val() === '2') {
             //filtro
             $('#nvc_filtro_pj').show();
             $('#nvc_filtro_pn').hide();
@@ -93,6 +93,7 @@
 
         //butones
         $('#nvc_continuar').show();
+        $('#nvc_agregar').hide();
         
         if(id!=0){ 
           actualizar = true;
@@ -150,7 +151,6 @@
 
          //spiner off
          $('#nvc_load').hide();
-         $('#nvc_continuar').show();
 
         //butones
         $('#nvc_continuar').show();
@@ -236,33 +236,4 @@ $(document).ready(function() {
       });
   });
 
-  function nvc_continuar(id) {
-    id = idvalue
-    $.ajax({
-        type: 'POST',
-        url: '../controllers/controller_nvc.php',
-        data: {continuar:id},
-        success: function(response) {
-      }
-    });
-  }
-  // function nvc_actualizar(id) {
-  //   id = idvalue
-  //   $.ajax({
-  //       type: 'POST',
-  //       url: '../controllers/controller_nvc.php',
-  //       data: {actualizar:id},
-  //       success: function(response) {
-  //     }
-  //   });
-  // }
-  // function nvc_agregar() {
-  //   $.ajax({
-  //       type: 'POST',
-  //       url: '../controllers/controller_nvc.php',
-  //       data: {continuar:id},
-  //       success: function(response) {
-  //     }
-  //   });
-  // }
 </script>
